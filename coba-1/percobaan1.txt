@@ -1,0 +1,29 @@
+$ cd aarch64/bin/
+$ ./imagenet-camera
+imagenet-camera
+  args (1):  0 [./imagenet-camera]  
+[gstreamer] initialized gstreamer, version 1.14.1.0
+[gstreamer] gstCamera attempting to initialize with GST_SOURCE_NVCAMERA
+[gstreamer] gstCamera pipeline string:
+v4l2src device=/dev/video0 ! video/x-raw, width=(int)1280, height=(int)720, format=YUY2 ! videoconvert ! video/x-raw, format=RGB ! videoconvert !appsink name=mysink
+[gstreamer] gstCamera successfully initialized with GST_SOURCE_V4L2
+imagenet-camera:  successfully initialized video device
+    width:  1280
+   height:  720
+    depth:  24 (bpp)
+imageNet -- loading classification network model from:
+         -- prototxt     networks/googlenet.prototxt
+         -- model        networks/bvlc_googlenet.caffemodel
+         -- class_labels networks/ilsvrc12_synset_words.txt
+         -- input_blob   'data'
+         -- output_blob  'prob'
+         -- batch_size   2
+[TRT]  TensorRT version 5.0.6
+[TRT]  detected model format - caffe  (extension '.caffemodel')
+[TRT]  desired precision specified for GPU: FASTEST
+[TRT]  requested fasted precision for device GPU without providing valid calibrator, disabling INT8
+[TRT]  native precisions detected for GPU:  FP32, FP16
+[TRT]  selecting fastest native precision for GPU:  FP16
+[TRT]  attempting to open engine cache file networks/bvlc_googlenet.caffemodel.2.1.GPU.FP16.engine
+[TRT]  loading network profile from engine cache... networks/bvlc_googlenet.caffemodel.2.1.GPU.FP16.engine
+[TRT]  device GPU, networks/bvlc_googlenet.caffemodel loaded

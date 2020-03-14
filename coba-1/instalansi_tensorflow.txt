@@ -1,0 +1,19 @@
+$ workon deep_learning
+$ pip install numpy
+$ pip install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v42 tensorflow-gpu==1.13.1+nv19.3
+$ pip install scipy
+$ pip install keras
+
+$ git clone https://github.com/dusty-nv/jetson-inference
+$ cd jetson-inference
+$ git submodule update --init
+
+$ mkdir build
+$ cd build
+$ cmake ..
+
+$ make
+$ sudo make install
+
+
+
